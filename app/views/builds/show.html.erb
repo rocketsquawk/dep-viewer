@@ -1,0 +1,13 @@
+<h1>Build</h1>
+<h2>Dependencies</h2>
+<ul>
+	<% @build.dependencies.each do |dependency| %>
+	<li><%= dependency.dependency_project_name(dependency.dependency_build_id) + '-' + dependency.dependency_build_number(dependency.dependency_build_id) %></li>
+	<% end %>
+</ul>
+<h2>Dependants</h2>
+<ul>
+	<% @build.dependants.each do |dependant| %>
+	<li><%= dependant.build_id %></li>
+	<% end %>
+</ul>
