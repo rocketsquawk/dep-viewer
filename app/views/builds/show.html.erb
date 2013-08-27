@@ -1,4 +1,4 @@
-<h1>Build</h1>
+<h1><%= @build.project_name + '-' + @build.build_number %></h1>
 <h2>Dependencies</h2>
 <ul>
 	<% @build.dependencies.each do |dependency| %>
@@ -8,6 +8,6 @@
 <h2>Dependants</h2>
 <ul>
 	<% @build.dependants.each do |dependant| %>
-	<li><%= dependant.build_id %></li>
+	<li><%= dependant.dependency_project_name(dependant.build_id) + '-' + dependant.dependency_build_number(dependant.build_id) %></li>
 	<% end %>
 </ul>
